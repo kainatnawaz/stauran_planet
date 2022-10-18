@@ -42,28 +42,31 @@ class CustomButton extends StatelessWidget {
   }
 
   _buildButtonWidget() {
-    return Material(
-      borderRadius: _setBorderRadius(),
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          margin:   margin??EdgeInsets.only( left: 24,
-              top: 16,
-              right: 24,
-              bottom: 10),
-          width: getHorizontalSize(width ?? 0),
-          padding: _setPadding(),
-          decoration: BoxDecoration(
-            color: _setColor(),
-            border: _setBorder(),
-            borderRadius: _setBorderRadius(),
-            gradient: _setGradient(),
-            boxShadow: _setBoxShadow(),
-          ),
-          child: Text(
-            text ?? "",
-            textAlign: TextAlign.center,
-            style: _setFontStyle(),
+    return Padding(
+      padding:
+          margin ?? EdgeInsets.only(left: 10, top: 0, right: 10, bottom: 5),
+      child: Material(
+        borderRadius: _setBorderRadius(),
+        child: InkWell(
+          borderRadius: _setBorderRadius(),
+          onTap: onTap,
+          child: Container(
+            margin:
+                margin ?? EdgeInsets.only(left: 2, top: 5, right: 2, bottom: 5),
+            width: getHorizontalSize(width ?? 0),
+            padding: _setPadding(),
+            decoration: BoxDecoration(
+              color: _setColor(),
+              border: _setBorder(),
+              borderRadius: _setBorderRadius(),
+              gradient: _setGradient(),
+              boxShadow: _setBoxShadow(),
+            ),
+            child: Text(
+              text ?? "",
+              textAlign: TextAlign.center,
+              style: _setFontStyle(),
+            ),
           ),
         ),
       ),
